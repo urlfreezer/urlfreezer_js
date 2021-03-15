@@ -1,0 +1,23 @@
+{
+  "name": "urlfreezer",
+  "version": "0.1.0",
+  "description": "Client lib to interact with urlfreezer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urlfreezer/urlfreezer_js.git"
+  },
+  "keywords": [
+    "urlfreezer",
+    "linkmanagement"
+  ],
+  "author": "URL Freezer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urlfreezer/urlfreezer_js/issues"
+  },
+  "homepage": "https://github.com/urlfreezer/urlfreezer_js#readme"
+}
