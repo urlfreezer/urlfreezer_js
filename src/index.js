@@ -37,7 +37,7 @@ function fetchLinks(base, user) {
     headers: { "content-type": "application/json" },
   }).then(function (response) {
     if (response.ok) {
-      let data = response.data;
+      let data = response.json();
       let newLinks = new Map();
       for (let cur in data.links) {
         let link = data.links[cur];
@@ -50,7 +50,7 @@ function fetchLinks(base, user) {
   });
 }
 
-class URLFreezer {
+export class URLFreezer {
   constructor(user, url) {
     this.user = user;
     if (url) {
@@ -63,3 +63,5 @@ class URLFreezer {
     fetchLinks(this.url, this.user);
   }
 }
+
+
