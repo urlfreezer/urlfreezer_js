@@ -63,5 +63,3 @@ export class URLFreezer {
     fetchLinks(this.url, this.user);
   }
 }
-
-

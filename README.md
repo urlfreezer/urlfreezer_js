@@ -4,12 +4,16 @@ Simple library to interact with URL Freezer service from the web browser.
 
 
 ## Example
+
+This example connect to [URLFreezer](https://urlfreezer.com) fetch all the short links
+related to the current page defined there.
+
+```javascript
+import {URLFreezer} from 'urlfreezer'
+let urlFrezer = new URLFreezer('##user_id##'//The user id from URLFreezer)
+urlFrezer.replacePageLinks()
 ```
-import {URLFreezer} from 'urlfreezer_js'
-let urlFrezer = new URLFreezer('D3D'//UserID from the service)
-// Replace all the links in the page with defined links in URL Freezer
-urlFrezer.replacePageLinks();
-```
+
 
 
 
