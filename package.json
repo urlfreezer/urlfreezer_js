@@ -1,6 +1,6 @@
 {
   "name": "urlfreezer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Client lib to interact with urlfreezer",
   "main": "src/index.js",
   "scripts": {
