@@ -21,7 +21,9 @@ function replaceLinks(links) {
     let element = elements[cur];
     if (element.getAttribute) {
       let link = links.get(element.getAttribute("href"));
-      element.setAttribute("href", link);
+      if (link) {
+          element.setAttribute("href", link);
+      }
     }
   }
 }
