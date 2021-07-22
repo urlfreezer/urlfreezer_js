@@ -7,7 +7,7 @@ function getPageLinks() {
     if (element.getAttribute) {
       let url = element.getAttribute("href");
       if (url.startsWith("http") && !url.includes(host)) {
-        result.push(url);
+        result.push({ link: url, link_label: element.innerText });
       }
     }
   }
@@ -22,7 +22,7 @@ function replaceLinks(links) {
     if (element.getAttribute) {
       let link = links.get(element.getAttribute("href"));
       if (link) {
-          element.setAttribute("href", link);
+        element.setAttribute("href", link);
       }
     }
   }
@@ -30,10 +30,12 @@ function replaceLinks(links) {
 
 function fetchLinks(base, user) {
   let links = getPageLinks();
-  fetch(base + "api/fetch_links", {
+  let page = window.document.href;
+  fetch(base + "api/fetch_links_v2", {
     method: "POST",
     body: JSON.stringify({
       user: user,
+      page: page,
       links: links,
     }),
     headers: { "content-type": "application/json" },
