@@ -76,7 +76,7 @@ class Usages {
   }
 }
 
-function getPageLinks() {
+function findPageLinks() {
   let elements = document.getElementsByTagName("a");
   let result = new Usages();
   let host = window.location.hostname;
@@ -92,8 +92,8 @@ function getPageLinks() {
   return result;
 }
 
-function fetchLinks(base, user) {
-  let usages = getPageLinks();
+function replaceLinks(base, user) {
+  let usages = findPageLinks();
   let links = usages.getUsagesReqV2();
   let page = window.document.href;
   fetch(base + "api/fetch_links_v2", {
@@ -138,9 +138,9 @@ export class URLFreezer {
     }
   }
   replacePageLinks() {
-    fetchLinks(this.url, this.user);
+    replaceLinks(this.url, this.user);
   }
   findLinks() {
-    return getPageLinks();
+    return findPageLinks();
   }
 }
