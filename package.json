@@ -1,10 +1,11 @@
 {
   "name": "urlfreezer",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Client lib to interact with urlfreezer",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/urlfreezer/urlfreezer_js/issues"
   },
-  "homepage": "https://github.com/urlfreezer/urlfreezer_js#readme"
+  "homepage": "https://github.com/urlfreezer/urlfreezer_js#readme",
+  "devDependencies": {
+    "jsdom": "^16.6.0",
+    "mocha": "^9.0.3"
+  }
 }
