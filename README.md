@@ -10,8 +10,8 @@ related to the current page defined there.
 
 ```javascript
 import {URLFreezer} from 'urlfreezer'
-let urlFrezer = new URLFreezer('##user_id##'//The user id from URLFreezer)
-urlFrezer.replacePageLinks()
+let urlFreezer = new URLFreezer('##user_id##'//The user id from URLFreezer)
+urlFreezer.replacePageLinks()
 ```
 
 
