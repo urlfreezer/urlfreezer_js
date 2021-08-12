@@ -104,11 +104,14 @@ function replaceLinks(base, user) {
       links: links,
     }),
     headers: { "content-type": "application/json" },
-  }).then(function (response) {
-    if (response.ok) {
-      let data = response.json();
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
       usages.replaceV2(data);
-    } else {
+    })
+    .catch(function (error_v2) {
       let links = usages.getUsagesReqV1();
       fetch(base + "api/fetch_links", {
         method: "POST",
@@ -118,14 +121,18 @@ function replaceLinks(base, user) {
           links: links,
         }),
         headers: { "content-type": "application/json" },
-      }).then(function (response) {
-        if (response.ok) {
-          let data = response.json();
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
           usages.replaceV1(data);
-        }
-      });
-    }
-  });
+        })
+        .catch(function (error_v1) {
+          console.log("error fetching links v2 " + error_v2);
+          console.log("error fetching links v1 " + error_v1);
+        });
+    });
 }
 
 export class URLFreezer {
